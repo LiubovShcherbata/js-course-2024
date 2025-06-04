@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let enterNumber;
+
+        enterNumber = prompt("Введіть ціле число");
+        enterNumber = parseInt(enterNumber);
+        console.log(enterNumber);
+        function checkIntegerInput() {
+            if (Number.isInteger(enterNumber)) {
+                alert("Введене число ціле");
+                let result = enterNumber % 2;
+                console.log(result);
+                if (result != 0) {
+                    alert("Введене число непарне");
+                } else {
+                    alert("Введене число парне")
+                };
+            } else {
+                alert("Введене не ціле число!");
+
+            }
+        };
+        checkIntegerInput(enterNumber);
+
+        // Number.isInteger() - визначає, чи є передане значення цілим числом.Повертає true якщо ціле число, в іншому випадку повертає false.
+
+
+    </script>
+</body>
+
+</html>
