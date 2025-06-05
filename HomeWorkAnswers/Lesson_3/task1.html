@@ -9,7 +9,7 @@
 
 <body>
     <script>
-        let enterNumber;
+        /*let enterNumber;
 
         enterNumber = prompt("Введіть ціле число");
         enterNumber = parseInt(enterNumber);
@@ -29,7 +29,30 @@
 
             }
         };
-        checkIntegerInput(enterNumber);
+        checkIntegerInput(enterNumber);*/
+
+        let enterNumber = prompt("Введіть ціле число (навіть дуже велике)");
+
+        try {
+            let bigIntNumber = BigInt(enterNumber); // перетворення в BigInt
+
+            alert("Введене число ціле");
+
+            let result = bigIntNumber % 2n;
+            if (result !== 0n) {
+                alert("Введене число непарне");
+            } else {
+                alert("Введене число парне");
+            }
+
+            console.log("Введене число:", bigIntNumber.toString());
+            console.log("Залишок від ділення на 2:", result.toString());
+
+        } catch (e) {
+            alert("Помилка: Введене не ціле число або занадто велике/некоректне значення.");
+            console.error(e);
+        }
+
 
         // Number.isInteger() - визначає, чи є передане значення цілим числом. Повертає true якщо ціле число, в іншому випадку повертає false.
 
