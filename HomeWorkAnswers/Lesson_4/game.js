@@ -10,7 +10,7 @@ let playerWin = 0;
 let compWin = 0;
 for (let i = 0; i < 3; i++) {
 
-    let playerChoice = getValue("Введіть цифру, яка відповідає обраному значенню Камінь 1, Ножиці 2 або Папір 3");
+    let playerChoice = getValue("Введіть цифру, яка відповідає обраному значенню Камінь 1, Ножиці 2, Папір 3. Натисніть буд'яке число для виходу");
     let options = ["Камінь", "Ножиці", "Папір"];
 
     if (playerChoice >= 1 && playerChoice <= 3) {
