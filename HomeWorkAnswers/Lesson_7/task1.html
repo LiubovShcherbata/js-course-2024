@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Student {
+            constructor(id, name, surname, age, gradePointAver) {
+                this.id = id;
+                this.name = name;
+                this.surname = surname;
+                this.age = age;
+                this.gradePointAver = gradePointAver;
+            }
+
+            getInfo() {
+                return `ID: ${this.id}, Ім'я: ${this.name}, Прізвище: ${this.surname}, Вік: ${this.age}, Середній бал: ${this.gradePointAver}`;
+            }
+        }
+
+        let group = {
+            students: [
+                new Student(1, "Kostiantyn", "Shcherbatyi", 25, 99)
+            ],
+            add: function (id, name, surname, age, gradePointAver) {
+                this.students.push(new Student(id, name, surname, age, gradePointAver));
+            },
+
+            remove: function (id) {
+                let index = this.students.findIndex(student => student.id === id);
+                if (index !== -1) {
+                    this.students.splice(index, 1);
+                    console.log(`Студента з ID ${id} видалено.`);
+                } else {
+                    console.log(`Студента з ID ${id} не знайдено.`);
+                }
+            },
+
+            studentDisplayInfo: function (id) {
+                let student = this.students.find(student => student.id === id);
+                if (student) {
+                    console.log(student.getInfo());
+                } else {
+                    console.log(`Студента з ID ${id} не знайдено.`);
+                }
+            },
+
+            displayAll: function () {
+                if (this.students.length === 0) {
+                    console.log("Список студентів порожній.");
+                } else {
+                    console.log("Список студентів: ");
+                    this.students.forEach(student => {
+                        console.log(student.getInfo());
+                    });
+                }
+            }
+
+        }
+
+        group.add(2, "Olena", "Ivanova", 22, 92.3);
+        group.add(3, "Petro", "Kovalenko", 20, 85.6);
+
+        group.displayAll(); // Виведе всіх студентів
+        group.studentDisplayInfo(2); // Виведе інформацію про студентку Олену
+        group.remove(3); // Видалить Петра
+        group.displayAll(); // Знову виведе список студентів
+
+        
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
