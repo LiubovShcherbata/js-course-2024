@@ -51,7 +51,7 @@ const allBooks = {
     },
 
     update(id, book) {
-        let index = this.books.findIndex(x => x.id == id);
+        let index = this.books.findIndex(x => x.id === id);
         this.books[index] = book;
     },
 
