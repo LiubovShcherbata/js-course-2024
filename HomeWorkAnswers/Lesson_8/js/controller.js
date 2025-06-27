@@ -1,19 +1,20 @@
-let html=document.querySelector("#book-list");
-bookList.render(allBooks.books, html);
+let html = document.querySelector("#book-list");
+// bookList.render(allBooks.books, html);
 
 //inputs
-const titleInput=document.querySelector("#titleInput");
-const authorInput=document.querySelector("#authorInput");
-const yearInput=document.querySelector("#yearInput");
-const genreInput=document.querySelector("#genreInput");
+const titleInput = document.querySelector("#titleInput");
+const authorInput = document.querySelector("#authorInput");
+const yearInput = document.querySelector("#yearInput");
+const genreInput = document.querySelector("#genreInput");
 
-function render(){
+function render() {
+    html.innerHTML = ""; // Очистити контейнер
     bookList.render(allBooks.books, html);
 }
 
-contactForm.addEventListener("submit", function(e){
+contactForm.addEventListener("submit", function (e) {
     e.preventDefault(); // Щоб форма не перезавантажувала сторінку
-    let book={
+    let book = {
         title: titleInput.value,
         author: authorInput.value,
         year: yearInput.value,
