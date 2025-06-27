@@ -1,7 +1,21 @@
+* {
+    font-family: 'Comic sans ms';
+}
+
 .book {
     background-color: aquamarine;
-    font-family: 'Comic sans ms';
+    /* font-family: 'Comic sans ms'; */
     padding: 10px 25px;
     margin: 30px 10px;
     border-radius: 10px;
+}
+
+#contactForm label {
+    display: inline-block;
+    width: 100px;
+    /* font-family: 'Comic sans ms'; */
+}
+
+#contactForm div {
+    margin-bottom: 10px;
 }
