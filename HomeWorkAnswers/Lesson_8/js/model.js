@@ -45,7 +45,7 @@ const allBooks = {
         this.books.push(book);
     },
 
-    remuve(id) {
+    remove(id) {
         let index = this.books.findIndex(x => x.id == id);
         this.books.splice(index, 1);
     },
