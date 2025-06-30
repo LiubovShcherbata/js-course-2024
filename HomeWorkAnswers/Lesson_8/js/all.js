@@ -147,7 +147,7 @@ function render() {
 
 function defaultSubmitHandler(e) {
     e.preventDefault();
-    const book = {
+    let book = {
         title: titleInput.value,
         author: authorInput.value,
         year: parseInt(yearInput.value),
@@ -158,6 +158,6 @@ function defaultSubmitHandler(e) {
     contactForm.reset();
 }
 
-// contactForm.addEventListener("submit", defaultSubmitHandler);
+contactForm.addEventListener("submit", defaultSubmitHandler);
 
 render();
