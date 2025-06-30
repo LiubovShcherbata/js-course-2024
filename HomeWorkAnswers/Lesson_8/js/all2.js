@@ -112,15 +112,24 @@ const allBooks = {
 
     const form = document.forms[0];
         
-        form.title.addEventListener("change", function () {
+        form.title.addEventListener("input", function () {
           const enteredTitle = form.titleInput.value.trim().toLowerCase();
+          
           const found = allBooks.books.find(book =>
-            book.title.trim().toLowerCase() === enteredTitle
+            book.title.trim().toLowerCase() === enteredTitle&&
+            book.id !== editModeBookId // дозволяємо залишити ту ж назву при редагуванні
            ); 
           
           if (found){
-            alert("Така книга вже є в базі");
-           }
+            submitBtn.disabled = true;
+            // alert("Така книга вже є в базі");
+            submitBtn.title = "Така книга вже є в базі";
+            form.title.classList.add("error");
+           } else {
+            submitBtn.disabled = false;
+            submitBtn.title = ""; // прибрати підказку
+            form.title.classList.remove("error");
+          }
         });
 
         form.year.addEventListener("change", function () {
@@ -130,4 +139,6 @@ const allBooks = {
             alert("Введіть рік більший за 1450");
            }
         });
+
+        const submitBtn = document.getElementById("submitBtn");
     
