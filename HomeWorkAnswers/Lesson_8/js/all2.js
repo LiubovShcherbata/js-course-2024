@@ -111,7 +111,7 @@ const allBooks = {
     render();
 
     const form = document.forms[0];
-        
+        //Ми використовуємо подію "input", щоб реагувати на будь-які зміни в полі (а не лише "change", яка спрацьовує після втрати фокусу).
         form.title.addEventListener("input", function () {
           const enteredTitle = form.titleInput.value.trim().toLowerCase();
           
