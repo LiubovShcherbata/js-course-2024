@@ -88,7 +88,7 @@ const allBooks = {
       };
 
       if (!book.title || !book.author || isNaN(book.year) || !book.genre) {
-        alert("Будь ласка, заповни всі поля правильно");
+        alert('Будь ласка, заповни всі поля. У полі "Year" мають бути тільки цифри.');
         return;
       }
 
@@ -100,6 +100,8 @@ const allBooks = {
         allBooks.add(book);
       }
 
+      
+
       render();
       contactForm.reset();
     }
@@ -107,3 +109,25 @@ const allBooks = {
     contactForm.addEventListener("submit", handleFormSubmit);
 
     render();
+
+    const form = document.forms[0];
+        
+        form.title.addEventListener("change", function () {
+          const enteredTitle = form.titleInput.value.trim().toLowerCase();
+          const found = allBooks.books.find(book =>
+            book.title.trim().toLowerCase() === enteredTitle
+           ); 
+          
+          if (found){
+            alert("Така книга вже є в базі");
+           }
+        });
+
+        form.year.addEventListener("change", function () {
+          const enteredYear = form.yearInput.value;
+          
+          if (enteredYear<1450){
+            alert("Введіть рік більший за 1450");
+           }
+        });
+    
