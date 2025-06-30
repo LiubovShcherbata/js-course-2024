@@ -19,3 +19,8 @@
 #contactForm div {
     margin-bottom: 10px;
 }
+
+.error {
+    border: 2px solid red;
+    background-color: #ffe6e6;
+  }
